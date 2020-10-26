@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Note Code</string>
+    <string name="splash_by">Create by @rmandoHernández</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="dialog_name">Nombre</string>
+    <string name="dialog_age">Edad</string>
+    <!--Data's-->
+    <string name="prefs_file">com.utng.intrumentounit2.PREFERENCE_FILE_KEY</string>
+</resources>
