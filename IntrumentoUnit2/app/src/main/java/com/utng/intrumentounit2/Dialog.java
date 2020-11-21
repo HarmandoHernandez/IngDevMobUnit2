@@ -38,7 +38,7 @@ public class Dialog extends AppCompatDialogFragment{
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if (title.getText().length() > 3 ) {
+                        if (title.getText().length() > 0 ) {
                             Log.i("Dialog.java", "Con datos");
                             listener.applyTexts(title.getText().toString());
                         } else {

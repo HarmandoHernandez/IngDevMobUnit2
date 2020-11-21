@@ -16,7 +16,7 @@
             android:padding="20dp">
 
             <TextView
-                android:id="@+id/imageTopic"
+                android:id="@+id/image"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="60dp"
@@ -24,7 +24,7 @@
                 android:fontFamily="serif-monospace"
                 android:text="N"
                 android:textAlignment="center"
-                android:textSize="100dp"
+                android:textSize="120dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -32,14 +32,14 @@
                 app:srcCompat="@drawable/ic_launcher_background" />
 
             <TextView
-                android:id="@+id/textTopic"
+                android:id="@+id/titleNote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="28dp"
                 android:text="Title Note"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageTopic"/>
+                app:layout_constraintTop_toBottomOf="@+id/image"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,15 +49,14 @@
                 android:background="@color/colorBlueLite"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textTopic" >
+                app:layout_constraintTop_toBottomOf="@+id/titleNote" >
 
                 <TextView
-                    android:id="@+id/textDate"
+                    android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="17dp"
-                    android:layout_marginLeft="10dp"
-                    android:text="Date"/>
+                    android:layout_marginLeft="10dp"/>
 
                 <ImageButton
                     android:id="@+id/btnDelete"
@@ -66,13 +65,7 @@
                     android:src="@drawable/ic_delete"
                     android:layout_marginLeft="10dp"
                     android:background="@color/colorTransparent"/>
-                <ImageButton
-                    android:id="@+id/btnSave"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_save"
-                    android:layout_marginLeft="10dp"
-                    android:background="@color/colorTransparent"/>
+
                 <ImageButton
                     android:id="@+id/btnEdit"
                     android:layout_width="24dp"
@@ -80,17 +73,38 @@
                     android:src="@drawable/ic_edit"
                     android:layout_marginLeft="10dp"
                     android:background="@color/colorTransparent"/>
+                <ImageButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_save"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorTransparent"
+                    android:visibility="invisible"/>
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textContent"
+                android:id="@+id/contentView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bar" />
+                app:layout_constraintTop_toBottomOf="@+id/bar"/>
+
+            <EditText
+                android:id="@+id/contentEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:inputType="text|textMultiLine"
+                android:lines="2"
+                android:maxLines="8"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bar"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

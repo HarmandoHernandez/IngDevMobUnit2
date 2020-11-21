@@ -26,7 +26,7 @@ public class Note {
     @NonNull
     String date;
 
-    public Note(@NonNull String id, @NonNull String title, String content, @NonNull String date) {
+    public Note(@NonNull String title, String content, @NonNull String date) {
         this.id = UUID.randomUUID().toString();
         this.title = title;
         this.content = content;
