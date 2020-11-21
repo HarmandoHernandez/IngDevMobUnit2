@@ -14,11 +14,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="20dp">
-            <ImageView
+
+            <TextView
                 android:id="@+id/imageTopic"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="60dp"
+                android:background="@drawable/circle"
+                android:fontFamily="serif-monospace"
+                android:text="N"
+                android:textAlignment="center"
+                android:textSize="100dp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -28,11 +35,52 @@
                 android:id="@+id/textTopic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Topic"
+                android:textSize="28dp"
+                android:text="Title Note"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageTopic" />
+                app:layout_constraintTop_toBottomOf="@+id/imageTopic"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/bar"
+                android:background="@color/colorBlueLite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTopic" >
+
+                <TextView
+                    android:id="@+id/textDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Date"/>
+
+                <ImageButton
+                    android:id="@+id/btnDelete"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_delete"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorTransparent"/>
+                <ImageButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_save"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorTransparent"/>
+                <ImageButton
+                    android:id="@+id/btnEdit"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_edit"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorTransparent"/>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textContent"
@@ -42,7 +90,7 @@
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textTopic" />
+                app:layout_constraintTop_toBottomOf="@+id/bar" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
