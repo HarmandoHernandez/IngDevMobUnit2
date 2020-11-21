@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TopicActivity"
+            android:name=".NoteActivity"
             android:parentActivityName=".MenuActivity" />
         <activity android:name=".MenuActivity" />
         <activity

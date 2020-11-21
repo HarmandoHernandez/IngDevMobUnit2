@@ -13,7 +13,7 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         app:backgroundTint="@color/colorPrimary"
-        app:srcCompat="@android:drawable/sym_action_chat" />
+        app:srcCompat="@drawable/ic_add" />
 
     <ListView
         android:id="@+id/list"

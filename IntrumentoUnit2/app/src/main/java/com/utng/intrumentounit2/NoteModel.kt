@@ -2,8 +2,8 @@ package com.utng.intrumentounit2
 
 import java.io.Serializable
 
-class Topic(
+class NoteModel(
     val title: String,
-    val image: Int,
-    val content: String
+    val content: String,
+    val date: String
 ) : Serializable

@@ -16,8 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class Dialog extends AppCompatDialogFragment{
-    private EditText userName;
-    private EditText userAge;
+    private EditText title;
     private DialogListener listener;
 
     @NonNull
@@ -39,9 +38,9 @@ public class Dialog extends AppCompatDialogFragment{
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if (userName.getText().length() > 3 && (userAge.getText().length() == 1 || userAge.getText().length() == 2) ) {
+                        if (title.getText().length() > 3 ) {
                             Log.i("Dialog.java", "Con datos");
-                            listener.applyTexts(userName.getText().toString(), userAge.getText().toString());
+                            listener.applyTexts(title.getText().toString());
                         } else {
                             Log.i("Dialog.java", "Sin datos");
                             // TODO : Mostrar alerta de no permitir espacios vacios
@@ -49,8 +48,7 @@ public class Dialog extends AppCompatDialogFragment{
                     }
                 });
 
-        userName = view.findViewById(R.id.userName);
-        userAge = view.findViewById(R.id.userAge);
+        title = view.findViewById(R.id.title);
 
         return builder.create();
     }
@@ -66,6 +64,6 @@ public class Dialog extends AppCompatDialogFragment{
     }
 
     public interface DialogListener {
-        void applyTexts(String userName, String userAge);
+        void applyTexts(String title);
     }
 }
