@@ -39,11 +39,7 @@ public class Dialog extends AppCompatDialogFragment{
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if (title.getText().length() > 0 ) {
-                            Log.i("Dialog.java", "Con datos");
                             listener.applyTexts(title.getText().toString());
-                        } else {
-                            Log.i("Dialog.java", "Sin datos");
-                            // TODO : Mostrar alerta de no permitir espacios vacios
                         }
                     }
                 });

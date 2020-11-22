@@ -26,8 +26,21 @@ public class Note {
     @NonNull
     String date;
 
+    /*
     public Note(@NonNull String title, String content, @NonNull String date) {
         this.id = UUID.randomUUID().toString();
+        this.title = title;
+        this.content = content;
+        this.date = date;
+    }
+    */
+
+    public Note(@NonNull String id, @NonNull String title, String content, @NonNull String date) {
+        if (id != ""){
+            this.id = id;
+        } else {
+            this.id = UUID.randomUUID().toString();
+        }
         this.title = title;
         this.content = content;
         this.date = date;
@@ -41,23 +54,6 @@ public class Note {
     public void setId(@NonNull String id) {
         this.id = id;
     }
-/*
-    @NonNull
-    public String getTitle() {
-        return title;
-    }
 
-    public void setTitle(@NonNull String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-    */
 }
 

@@ -24,13 +24,17 @@ class MenuActivity: AppCompatActivity(), Dialog.DialogListener {
         menu()
     }
 
+    override fun onStart() {
+        super.onStart()
+        menu()
+    }
+
     private fun menu() {
         val notes: List<Note> = noteLab?.notes ?: emptyList()
 
         val listNotes = ArrayList<NoteModel>()
         for (note in notes){
             listNotes.add(NoteModel(note.id, note.title, note.content, note.date))
-            println("note : " + note.title + " " + note.content + " " + note.date)
         }
 
         val adapter = NoteAdapter(this, listNotes)
@@ -50,7 +54,7 @@ class MenuActivity: AppCompatActivity(), Dialog.DialogListener {
 
     override fun applyTexts(title: String?) {
         if (title != null) {
-            val newNote = Note(title, "", DateFormat.getDateTimeInstance().format(Date()))
+            val newNote = Note("", title, "", DateFormat.getDateTimeInstance().format(Date()))
             noteLab?.addNote(newNote)
             Toast.makeText(this, "Nota agregada", Toast.LENGTH_SHORT).show()
             menu()

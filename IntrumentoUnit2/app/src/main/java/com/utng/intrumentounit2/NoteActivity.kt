@@ -30,12 +30,15 @@ class NoteActivity : AppCompatActivity() {
 
         btnDelete.setOnClickListener {
             /** Eliminar */
+            delete(topic)
         }
         btnSave.setOnClickListener {
             /** Guardar */
             val newContent = contentEdit.text
             contentView.text = newContent
             topic.content = newContent.toString()
+
+            save(topic)
 
             contentEdit.isVisible = false
             contentView.isVisible = true
@@ -44,7 +47,7 @@ class NoteActivity : AppCompatActivity() {
             btnEdit.isVisible = true
         }
         btnEdit.setOnClickListener {
-            /** Eliminar */
+            /** Editar */
             contentView.isVisible = false
             contentEdit.isVisible = true
             btnSave.isVisible = true
@@ -53,14 +56,14 @@ class NoteActivity : AppCompatActivity() {
         }
     }
 
-    private fun save(topic: NoteModel, newContent: String) {
-        noteLab?.updateNote(Note(topic.title, newContent, topic.date)) /** no lleva Id ERROR*/
+    private fun save(topic: NoteModel) {
+        noteLab?.updateNote(Note(topic.id, topic.title, topic.content, topic.date)) /** no lleva Id ERROR*/
         Toast.makeText(this, "Actualizada", Toast.LENGTH_SHORT).show()
     }
 
     private fun delete(topic: NoteModel){
-        noteLab?.deleteNote(Note(topic.title, topic.content, topic.date))
-        Toast.makeText(this, "Actualizada", Toast.LENGTH_SHORT).show()
-
+        noteLab?.deleteNote(Note(topic.id, topic.title, topic.content, topic.date))
+        //Toast.makeText(this, "Actualizada", Toast.LENGTH_SHORT).show()
+        finish()
     }
 }
